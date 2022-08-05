@@ -101,7 +101,7 @@ class UsersController extends Controller
         ];
         if (!$validar->fails()) {
             $user=User::where('email','=',$request->email)->first();
-            if(Hash::check($user->password,$request->email)){
+            if(Hash::check($user->password,$request->password)){
               if(Auth::attempt($credenciales)){
                     return view('dashboard');
               }
