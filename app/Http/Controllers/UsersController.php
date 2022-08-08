@@ -101,14 +101,17 @@ class UsersController extends Controller
         ];
         if (!$validar->fails()) {
             $user = User::where('email','=',$request->email)->first();
-            
+
             if(Hash::check($request->password,$user->password)){
               if(Auth::attempt($credenciales)){
+                // return "EL usuario se a logeado";
                 return redirect()->route('dashboard');
               }else{
-                return("error el iniciar sesion fallo");
+                return"error! el iniciar sesion fallo";
                 }
             }
+        }else{
+            return dump($credenciales);
         }
         
     }
@@ -118,7 +121,7 @@ class UsersController extends Controller
     }
 
     public function registrarse(Request $request){
-        $validar=Validator::make($request->all(),[
+        $validar = Validator::make($request->all(),[
             'name'=>'required',
             'email'=>'required',
             'password'=>'required',
@@ -134,6 +137,7 @@ class UsersController extends Controller
             $user->avatar = $request->file('avatar')->store('img','public');
         }
         $user->save();
+
         return redirect()->route('user');    
     }
         else return("error");

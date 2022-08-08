@@ -26,11 +26,11 @@
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
                 </div>
                 <div class="form-group">
                     <label for=""">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
                 {{-- <div class="form-group">
                 <label for="">Verifique su Password</label>
