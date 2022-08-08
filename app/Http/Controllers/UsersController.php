@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Unique;
 use App\Models\User;
-use Hash;
-use Validator;
-use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
@@ -100,14 +100,17 @@ class UsersController extends Controller
             'password'=>$request->password,
         ];
         if (!$validar->fails()) {
-            $user=User::where('email','=',$request->email)->first();
-            if(Hash::check($user->password,$request->password)){
+            $user = User::where('email','=',$request->email)->first();
+            
+            if(Hash::check($request->password,$user->password)){
               if(Auth::attempt($credenciales)){
-                    return view('dashboard');
-              }
+                return redirect()->route('dashboard');
+              }else{
+                return("error el iniciar sesion fallo");
+                }
             }
         }
-        else return("error");
+        
     }
 
     public function registrar(){

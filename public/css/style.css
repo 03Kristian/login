@@ -1,0 +1,38 @@
+#wrapper{
+    background-color: violet;
+    width: 100%;
+}
+
+#logo-perfil{
+    width: 5em;
+    height: 5em;
+    /* margin-left: 10%; */
+}
+
+#siderbar{
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(130, 233, 238);
+}
+
+#siderbar.active{
+    margin-left: -300px;
+}
+
+.siderbar-header{
+    
+}
+
+#content{
+    /* margin-inline-start: center; */
+    margin: auto;
+    padding-top:5em;
+    width: 20em;
+    height: 50vh;
+}
+.contenedor{
+    width: auto;
+    height: auto;
+    background-image: url('public/img/wallpaper_login.jpg');
+    background-repeat:no-repeat;
+}
