@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class UsersController extends Controller
 {
@@ -104,8 +106,9 @@ class UsersController extends Controller
 
             if(Hash::check($request->password,$user->password)){
               if(Auth::attempt($credenciales)){
-                // return "EL usuario se a logeado";
-                return redirect()->route('dashboard');
+                // return dump($credenciales);
+                
+                return redirect()->route('dashboard')->with('status',"Bienbenido! $user->email");
               }else{
                 return"error! el iniciar sesion fallo";
                 }

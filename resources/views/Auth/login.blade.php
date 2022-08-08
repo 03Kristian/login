@@ -15,7 +15,7 @@
 
 <body class="contenedor">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <div id="content">
+    <div id="content2">
         <div class="col container-fluid pt-4 card shadow-lg" style="background-color: rgb(15, 221, 228);">
             <form action="{{ route('login') }}" method="post">
                 {{ csrf_field() }}
@@ -39,6 +39,7 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn btn-outline-primary">continuar</button>
                 </div>
+                
                 <script>
                     Swal.fire({
                         position: 'top-center',
