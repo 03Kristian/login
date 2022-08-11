@@ -145,4 +145,8 @@ class UsersController extends Controller
     }
         else return("error");
     }
+
+    public function grafico(){
+        
+    }
 }

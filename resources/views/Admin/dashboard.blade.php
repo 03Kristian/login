@@ -26,7 +26,7 @@
 
     <div id="wrapper">
         <nav class="navbar navbar-expand-sm">
-            <button type="button" class="btn d-lg-none ">
+            <button type="button" class="btn btn-primary ">
                 <span class="bi bi-grid-fill"></span>
             </button>
             <button type="button" class="btn d-inline-block ml-auto" data-toggle="collapse"
@@ -45,6 +45,8 @@
             </div>
         </nav>
     </div>
+
+
     <div id="content">
         <nav id="siderbar">
             
@@ -72,16 +74,19 @@
                     <li>
                         <a data-toggle="collapse" data-target="#list2" aria-expanded="false"
                             aria-lable="Togglenavigation">
-                            Modulo 2
+                            Mesa de Votacion
                         </a>
                         <ul class="collapse" id="list2">
-                            <li><a href="#">Submenu1</a></li>
-                            <li><a href="#">Submenu2</a></li>
+                            <li><a href="#">Agregar Miembro</a></li>
+                            <li><a href="{{route('chart')}}">Vista Grafica</a></li>
                         </ul>
                     </li>
                 </ul>
             
         </nav>
+    </div>
+    <div class="col py-4 card-content">
+        @yield('content')
     </div>
 </body>
 

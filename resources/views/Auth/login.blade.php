@@ -19,10 +19,10 @@
         <div class="col container-fluid pt-4 card shadow-lg" style="background-color: rgb(15, 221, 228);">
             <form action="{{ route('login') }}" method="post">
                 {{ csrf_field() }}
-                <h3 class="text-center">Long in</h3>
+                <h3 class="text-center text-white-50">Long in</h3>
                 <div class="form-group">
                     <label for="">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="nombre">
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
