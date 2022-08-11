@@ -75,7 +75,7 @@
                         Mesa de Votacion
                     </a>
                     <ul class="collapse" id="list2">
-                        <li><a href="#">Agregar Miembro</a></li>
+                        <li><a href="{{ route('jurado.create') }}">Agregar Miembro</a></li>
                         <li><a href="{{ route('chart') }}">Vista Grafica</a></li>
                     </ul>
                 </li>

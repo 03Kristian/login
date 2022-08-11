@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Jurado;
 use Illuminate\Http\Request;
 use App\Models\Mesajurado;
+use Database\Seeders\JuradoSeeder;
 
 class PerfiljuradoController extends Controller
 {
@@ -25,7 +26,9 @@ class PerfiljuradoController extends Controller
      */
     public function create()
     {
-        //
+        $lugar = Mesajurado::all();
+
+        return view('Pages.create',compact('lugar'));
     }
 
     /**
@@ -36,7 +39,9 @@ class PerfiljuradoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $jurado= new Jurado;
+
+
     }
 
     /**

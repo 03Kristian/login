@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Controllers\Users;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PerfiljuradoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +34,6 @@ Route::post('/registrarse',[UsersController::class,'registrarse'])->name('regist
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 Route::get('/chart',[PerfiljuradoController::class,'chart'])->name('chart');
+
+
+Route::resource('jurado', PerfiljuradoController::class);
