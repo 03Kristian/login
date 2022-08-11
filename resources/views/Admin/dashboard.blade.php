@@ -49,44 +49,42 @@
 
     <div id="content">
         <nav id="siderbar">
-            
-                <div class="siderbar-header">
 
-                    {{-- para ver nombre del ususario condiciono la imagen del usuario --}}
-                    @if (auth()->check())
-                        <img id="logo-perfil" src="{{ asset(auth()->user()->avatar) }}"
-                            class="img-fluid rounded-circle shadow-lg">
-                        <p id="name">{{ auth()->user()->name }}</p>
-                    @endif
-                </div>
+            <div class="siderbar-header">
 
-                <ul class="list">
-                    <li>
-                        <a data-toggle="collapse" data-target="#list1" aria-expanded="false"
-                            aria-lable="Togglenavigation">
-                            Modulo 1
-                        </a>
-                        <ul class="collapse" id="list1">
-                            <li><a href="#" class="text-none">Home</a></li>
-                            <li><a href="#">Servicio1</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a data-toggle="collapse" data-target="#list2" aria-expanded="false"
-                            aria-lable="Togglenavigation">
-                            Mesa de Votacion
-                        </a>
-                        <ul class="collapse" id="list2">
-                            <li><a href="#">Agregar Miembro</a></li>
-                            <li><a href="{{route('chart')}}">Vista Grafica</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            
+                {{-- para ver nombre del ususario condiciono la imagen del usuario --}}
+                @if (auth()->check())
+                    <img id="logo-perfil" src="{{ asset(auth()->user()->avatar) }}"
+                        class="img-fluid rounded-circle shadow-lg">
+                    <p id="name">{{ auth()->user()->name }}</p>
+                @endif
+            </div>
+
+            <ul class="list">
+                <li>
+                    <a data-toggle="collapse" data-target="#list1" aria-expanded="false" aria-lable="Togglenavigation">
+                        Modulo 1
+                    </a>
+                    <ul class="collapse" id="list1">
+                        <li><a href="#" class="text-none">Home</a></li>
+                        <li><a href="#">Servicio1</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="collapse" data-target="#list2" aria-expanded="false" aria-lable="Togglenavigation">
+                        Mesa de Votacion
+                    </a>
+                    <ul class="collapse" id="list2">
+                        <li><a href="#">Agregar Miembro</a></li>
+                        <li><a href="{{ route('chart') }}">Vista Grafica</a></li>
+                    </ul>
+                </li>
+            </ul>
+
         </nav>
-    </div>
-    <div class="col py-4 card-content">
-        @yield('content')
+        <div class="col py-4 card">
+            @yield('content')
+        </div>
     </div>
 </body>
 

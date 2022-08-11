@@ -40,12 +40,22 @@
     width: 20em;
     height: 100vh;
 }
+
+#content-3{
+    margin: auto;
+    display:flex;
+    align-items:center;
+    width: 25em;
+    height: 100vh;
+}
+
 .contenedor{
     width: auto;
     height: auto;
     background-image: url('public/img/wallpaper_login.jpg');
     background-repeat:no-repeat;
 }
+
 
 .list{
     padding-left: 0;
@@ -65,5 +75,22 @@
     margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+#vitrina{
+    
+    background-color: #69A6A4;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    color: white ;
+    font-size: 1.2em;
+    border-radius: 1.5em;
+}
+
+.btn-continuar{
+    
+    margin: auto;
+    margin-bottom: 1em;
+    display: flex;
     align-items: center;
 }
