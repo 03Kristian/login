@@ -1,4 +1,4 @@
-#wrapper{
+/* #wrapper{
     background-color: #4094a5;
     width: 100%;
 }
@@ -93,4 +93,105 @@
     margin-bottom: 1em;
     display: flex;
     align-items: center;
+} */
+
+#wrapper{
+    background-color: rgb(6, 116, 13);
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#navbarSupportedContent ul{
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    /* display: flex; */
+
+}
+
+#navbarSupportedContent ul li a{
+    height: auto;
+    width: 20px;
+    flex-wrap: wrap;
+    margin-right: 10px;
+
+    text-decoration: none;
+    
+}
+
+#logo-perfil{
+
+    /* width: 5em;
+    height: 5em; */
+    width: auto;
+    height: auto;
+
+    /* color: rgba(red, green, blue, alpha); */
+}
+
+/* Esta caja esta mal ubicada esta en medio de el menu superior y el 
+*   Menu desplegable no se si utilizar la propiedad wrap
+ */
+/* #content{
+    width: auto;
+    height: auto;
+    background-color: rgb(1, 1,1,0.1);
+} */
+
+#siderbar{
+    position: relative;
+    width: 20%;
+    height: 100vh;
+    margin: auto;  
+    background-color: rgb(0, 0, 0 ,0.5);
+}
+
+#siderbar.active{
+    margin-left:-300px;
+}
+#siderbar ul{
+    margin: auto;
+    max-width: 100%;
+    padding: 5px;
+    
+    border-left: solid 0px rgb(0, 0, 0 ,0.5);
+
+}
+
+#siderbar ul:hover{
+    margin: auto;
+    max-width: 100%;
+    padding: 0px;
+    border-left: solid 3px #ffffffb8;
+
+}
+
+#siderbar .list li{
+    padding-left: 10px;
+    list-style: none;
+}
+
+#siderbar .list li a{
+    text-align: center;
+    text-decoration: none;
+    text-align: center;
+}
+
+#siderbar .list li a:hover{
+    color: rgb(112, 218, 232);
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+.siderbar-header{
+    margin:auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+    
 }

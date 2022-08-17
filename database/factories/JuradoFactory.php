@@ -19,8 +19,9 @@ class JuradoFactory extends Factory
             'nombre'=>  $this->faker->name(),
             'apellido' => $this->faker->lastName(),
             'email' => $this->faker->email(),
-            'id_mesajurado' => $this->faker->numberBetween(1,2),
+            // 'id_mesajurado' => $this->faker->numberBetween(1,2),
         ];
+        
     }
 
     /* *@return \Illuminate\Database\Eloquent\Factories\Factory */

@@ -19,72 +19,73 @@
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script type="text/javascript" src="{{ asset('js/styles.js') }}"></script>
-    <title>Dashboard</title>
+    <title>Salud - Dashboard</title>
 </head>
 
 <body>
-
     <div id="wrapper">
         <nav class="navbar navbar-expand-sm">
-            <button type="button" class="btn btn-primary ">
-                <span class="bi bi-grid-fill"></span>
+            <button type="button" class="btn btn-primary" id="buttonsiderbar">
+                <span class="bi-archive"></span>
             </button>
-            <button type="button" class="btn d-inline-block ml-auto" data-toggle="collapse"
+            <button type="button" class="btn d-inline-block d-lg-none ml-auto" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-expanded="false" aria-lable="Togglenavigation">
                 <i class="navbar-toggler-icon" aria-controls="navbarSupportedContent"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-lg-center" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav navbar-center ml-auto ">
-                    <li class="navbar-item ">
-                        <a href="/" class="nav-link"><i class="bi-house">Home</i></a>
+                    <li class="navbar-item">
+                        <a href="#" ><i class="bi-apple"></i> </a>
                     </li>
                     <li class="navbar-item">
-                        <i class="bi bi-box-arrow-right">Logout</i>
+                        <a><i class="bi bi-bag-plus"></i></a>
                     </li>
                 </ul>
             </div>
+            <div class="btn-success">
+                <a href="#" class="bi bi-x-lg"> Sing out</a>
+            </div>
         </nav>
     </div>
-
-
     <div id="content">
-        <nav id="siderbar">
-
+        <nav id="siderbar" class="float-start d-inline-block p-0 text-white">
             <div class="siderbar-header">
-
-                {{-- para ver nombre del ususario condiciono la imagen del usuario --}}
+                {{-- para ver nombre del ususario --}}
+                {{-- <p>{{auth()->user()->name}}</p> --}}
+                {{-- condiciono la imagen del usuario
                 @if (auth()->check())
-                    <img id="logo-perfil" src="{{ asset(auth()->user()->avatar) }}"
-                        class="img-fluid rounded-circle shadow-lg">
-                    <p id="name">{{ auth()->user()->name }}</p>
-                @endif
+                @endif --}}
+                <img id="logo-perfil"
+                    src="{{ url('https://media.revistagq.com/photos/5fc4d3e608c92a6bb64b9b83/1:1/w_960,c_limit/baby-yoda-nombre.jpg') }}"
+                    class="img-fluid rounded-circle shadow-lg">
             </div>
 
             <ul class="list">
                 <li>
                     <a data-toggle="collapse" data-target="#list1" aria-expanded="false" aria-lable="Togglenavigation">
-                        Modulo 1
+                        Abrir
                     </a>
                     <ul class="collapse" id="list1">
-                        <li><a href="#" class="text-none">Home</a></li>
-                        <li><a href="#">Servicio1</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{{route('sitios.index')}}">Sitios</a></li>
+                        <li><a href="{{route('jurado.create')}}">Registro Jurado</a></li>
+
                     </ul>
                 </li>
                 <li>
                     <a data-toggle="collapse" data-target="#list2" aria-expanded="false" aria-lable="Togglenavigation">
-                        Mesa de Votacion
+                        Puestos de Votacion
                     </a>
                     <ul class="collapse" id="list2">
-                        <li><a href="{{ route('jurado.create') }}">Agregar Miembro</a></li>
-                        <li><a href="{{ route('chart') }}">Vista Grafica</a></li>
+                        <li><a href="{{ route('chart') }}">Chart</a></li>
+                        <li><a href="#">Submenu2</a></li>
                     </ul>
                 </li>
             </ul>
-
         </nav>
-        <div class="col py-4 card">
-            @yield('content')
-        </div>
+    </div>
+    <div class="row py-4 flex-lg-wrap justify-content-center">
+        @yield('content')
     </div>
 </body>
 

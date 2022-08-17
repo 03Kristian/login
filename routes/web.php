@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Controllers\Users;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PerfiljuradoController;
+use App\Http\Controllers\SitioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,6 @@ Route::post('/login',[UsersController::class,'login'])->name('login');
 
 Route::get('/registrar',[UsersController::class,'registrar'])->name('registrar');
 
-Route::post('/registrarse',[UsersController::class,'registrarse'])->name('registrarse');
 
 Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
@@ -37,3 +38,5 @@ Route::get('/chart',[PerfiljuradoController::class,'chart'])->name('chart');
 
 
 Route::resource('jurado', PerfiljuradoController::class);
+//
+Route::resource('sitios', SitioController::class);

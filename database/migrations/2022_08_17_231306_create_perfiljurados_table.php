@@ -15,14 +15,12 @@ class CreatePerfiljuradosTable extends Migration
     {
         Schema::create('perfiljurados', function (Blueprint $table) {
             $table->id();
-            $table->Integer('identificacion')->length(5);
+            $table->string('identificacion');
             $table->string('nombre',45);
             $table->string('apellido',45);
             $table->string('email',60);
 
-            $table->unsignedBigInteger('id_mesajurado');
-            $table->foreign('id_mesajurado')->references('id')->on('mesajurados')
-            ->onDelete('cascade')->onUpdate('cascade');
+          
             $table->timestamps();
         });
     }

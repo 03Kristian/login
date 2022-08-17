@@ -26,9 +26,7 @@ class PerfiljuradoController extends Controller
      */
     public function create()
     {
-        $lugar = Mesajurado::all();
-
-        return view('Pages.create',compact('lugar'));
+        return view('perfil.create');
     }
 
     /**
@@ -39,8 +37,16 @@ class PerfiljuradoController extends Controller
      */
     public function store(Request $request)
     {
-        // $jurado= new Jurado;
+        $jurado = new Jurado();
+        $jurado->identificacion = $request->identificacion;
+        $jurado->nombre = $request->nombre;
+        $jurado->apellido = $request->apellido;
+        $jurado->email = $request->email;
 
+        $jurado->save();
+
+        // return redirect()->route('perfil.index');
+        return 'holaaa';
 
     }
 
