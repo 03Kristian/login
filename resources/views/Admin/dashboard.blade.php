@@ -26,7 +26,11 @@
     <div id="wrapper">
         <nav class="navbar navbar-expand-sm">
             <button type="button" class="btn btn-primary" id="buttonsiderbar">
+<<<<<<< HEAD
                 <span class="bi-archive"></span>
+=======
+                <span class="bi bi-grid-fill"></span>
+>>>>>>> 932d77785fe292268c5bf5bc5610ba01a21ef058
             </button>
             <button type="button" class="btn d-inline-block d-lg-none ml-auto" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-expanded="false" aria-lable="Togglenavigation">
@@ -38,13 +42,25 @@
                         <a href="#" ><i class="bi-apple"></i> </a>
                     </li>
                     <li class="navbar-item">
+<<<<<<< HEAD
                         <a><i class="bi bi-bag-plus"></i></a>
+=======
+                        <i class="bi bi-gear-wide-connected">Opt</i>
+>>>>>>> 932d77785fe292268c5bf5bc5610ba01a21ef058
                     </li>
                 </ul>
             </div>
             <div class="btn-success">
+<<<<<<< HEAD
                 <a href="#" class="bi bi-x-lg"> Sing out</a>
             </div>
+=======
+                {{-- <a href="#" class="bi bi-x-lg"> Sing out</a> --}}
+                <a href="{{ route('cierresesion') }}" class="miss">Cerrar Sesion</a>
+            </div>
+{{-- @include('sweetalert::alert'); --}}
+            
+>>>>>>> 932d77785fe292268c5bf5bc5610ba01a21ef058
         </nav>
     </div>
     <div id="content">
@@ -54,10 +70,16 @@
                 {{-- <p>{{auth()->user()->name}}</p> --}}
                 {{-- condiciono la imagen del usuario
                 @if (auth()->check())
+<<<<<<< HEAD
                 @endif --}}
                 <img id="logo-perfil"
                     src="{{ url('https://media.revistagq.com/photos/5fc4d3e608c92a6bb64b9b83/1:1/w_960,c_limit/baby-yoda-nombre.jpg') }}"
                     class="img-fluid rounded-circle shadow-lg">
+=======
+                    <img id="logo-perfil" src="{{ asset(Auth()->user()->avatar)}}" class="img-fluid rounded-circle shadow-lg">
+                    <p id="name">{{ auth()->user()->name }}</p>
+                @endif
+>>>>>>> 932d77785fe292268c5bf5bc5610ba01a21ef058
             </div>
 
             <ul class="list">
@@ -87,6 +109,7 @@
     <div class="row py-4 flex-lg-wrap justify-content-center">
         @yield('content')
     </div>
+
 </body>
 
 </html>
