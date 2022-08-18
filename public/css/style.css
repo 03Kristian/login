@@ -150,7 +150,7 @@ a{
 }
 
 #siderbar.active{
-    margin-left:-300px;
+    margin-left:-400px;
 }
 #siderbar ul{
     margin: auto;
@@ -194,4 +194,9 @@ a{
     justify-content: center;
 
     
+}
+#pag1{
+    max-height: 100vh;
+    overflow: scroll;
+
 }

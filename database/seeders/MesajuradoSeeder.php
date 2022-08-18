@@ -15,8 +15,8 @@ class MesajuradoSeeder extends Seeder
     public function run()
     {
         $data =[
-            array('sitio'=>'popayan'),
-            array('sitio'=>'cali'),
+            array('sitio_id'=>2,'perfil_id'=>3),
+            array('sitio_id'=>4,'perfil_id'=>5),
         ];
 
         Mesajurado::insert($data);

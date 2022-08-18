@@ -99,8 +99,8 @@ class PerfiljuradoController extends Controller
         $sitio = Mesajurado::all();
         $user = Jurado::all();
 
-        $label  = $sitio->pluck('sitio');
-        $data = $user->pluck('id_mesajurado');
+        $label  = $sitio->pluck('sitio_id');
+        $data = $sitio->pluck('perfil_id');
         // return dump($label,$data);
         return View('Pages.chart',compact('label','data','sitio','user'));
     }
