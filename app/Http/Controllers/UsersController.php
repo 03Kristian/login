@@ -105,11 +105,13 @@ class UsersController extends Controller
             $user = User::where('email','=',$request->email)->first();
 
             if(Hash::check($request->password,$user->password)){
+
               if(Auth::attempt($credenciales)){
                 // return dump($credenciales);
                 
-                return redirect()->route('dashboard')->with('status',"Bienbenido! $user->email");
-              }else{
+                // return redirect()->route('dashboard')->with('status',"Bienbenido! $user->email");
+                return redirect()->route('dashboard',compact('user'));
+            }else{
                 return"error! el iniciar sesion fallo";
                 }
             }
@@ -148,5 +150,11 @@ class UsersController extends Controller
 
     public function grafico(){
         
+    }
+
+    public function cierre(){
+        Auth::logout();
+        // Alert::warning('cierre de session');
+        return redirect()->route('user');
     }
 }

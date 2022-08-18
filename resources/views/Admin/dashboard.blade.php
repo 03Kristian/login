@@ -26,7 +26,7 @@
 
     <div id="wrapper">
         <nav class="navbar navbar-expand-sm">
-            <button type="button" class="btn btn-primary ">
+            <button type="button" class="btn btn-primary" id="buttonsiderbar">
                 <span class="bi bi-grid-fill"></span>
             </button>
             <button type="button" class="btn d-inline-block ml-auto" data-toggle="collapse"
@@ -39,10 +39,16 @@
                         <a href="/" class="nav-link"><i class="bi-house">Home</i></a>
                     </li>
                     <li class="navbar-item">
-                        <i class="bi bi-box-arrow-right">Logout</i>
+                        <i class="bi bi-gear-wide-connected">Opt</i>
                     </li>
                 </ul>
             </div>
+            <div class="btn-success">
+                {{-- <a href="#" class="bi bi-x-lg"> Sing out</a> --}}
+                <a href="{{ route('cierresesion') }}" class="miss">Cerrar Sesion</a>
+            </div>
+{{-- @include('sweetalert::alert'); --}}
+            
         </nav>
     </div>
 
@@ -54,8 +60,7 @@
 
                 {{-- para ver nombre del ususario condiciono la imagen del usuario --}}
                 @if (auth()->check())
-                    <img id="logo-perfil" src="{{ asset(auth()->user()->avatar) }}"
-                        class="img-fluid rounded-circle shadow-lg">
+                    <img id="logo-perfil" src="{{ asset(Auth()->user()->avatar)}}" class="img-fluid rounded-circle shadow-lg">
                     <p id="name">{{ auth()->user()->name }}</p>
                 @endif
             </div>
@@ -86,6 +91,7 @@
             @yield('content')
         </div>
     </div>
+
 </body>
 
 </html>

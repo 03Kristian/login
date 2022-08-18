@@ -35,5 +35,7 @@ Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')
 
 Route::get('/chart',[PerfiljuradoController::class,'chart'])->name('chart');
 
+Route::get('/cierresesion',[UsersController::class,'cierre'])->name('cierresesion');
+
 
 Route::resource('jurado', PerfiljuradoController::class);
