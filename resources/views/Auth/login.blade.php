@@ -16,19 +16,19 @@
 <body class="contenedor">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <div id="content2">
-        <div class="col container-fluid pt-4 card shadow-lg" style="background-color: rgb(15, 221, 228);">
+        <div class="shadow-xy container-fluid p-4 bg-fondo1 ">
             <form action="{{ route('login') }}" method="post">
                 {{ csrf_field() }}
                 <h3 class="text-center text-white-50">Long in</h3>
-                <div class="form-group">
+                <div class="form-group text-center" text-center>
                     <label for="">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="nombre">
+                    <input type="text" class="form-control" placeholder="nombre" id="name" name="name">
                 </div>
-                <div class="form-group">
+                <div class="form-group text-center">
                     <label for="">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
-                <div class="form-group">
+                <div class="form-group text-center">
                     <label for=""">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
@@ -36,8 +36,8 @@
                 <label for="">Verifique su Password</label>
                 <input type="password" class="form-control" id="v_password" placeholder="v_password">
               </div> --}}
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn btn-outline-primary">continuar</button>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn-continuar shadow-lg btn-outline-warning">continuar</button>
                 </div>
                 
                 <script>

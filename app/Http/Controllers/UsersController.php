@@ -90,6 +90,10 @@ class UsersController extends Controller
         //
     }
 
+    public function getlogin(){
+        return view('Auth.login');
+    }
+
     public function login(Request $request){
         $validar=Validator::make($request->all(),[
             'name'=>'required',

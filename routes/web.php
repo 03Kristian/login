@@ -24,7 +24,7 @@ Route::get('/', function () {
 // Route::resource('user', UsersController::class);
 
 Route::get('/user',[UsersController::class,'index'])->name('user');
-
+Route::get('/getlogin',[UsersController::class,'getlogin'])->name('getlogin');
 Route::post('/login',[UsersController::class,'login'])->name('login');
 
 Route::get('/registrar',[UsersController::class,'registrar'])->name('registrar');
