@@ -16,7 +16,7 @@
               @foreach ($sitios as $sitio)
               <tr>
                 <th scope="row">{{$sitio->id}}</th>
-                <td>{{$sitio->departamento}}</td>
+                <td>{{$sitio->municipio}}</td>
                 
 
                 <td>

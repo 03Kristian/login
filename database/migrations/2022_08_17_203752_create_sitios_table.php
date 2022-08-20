@@ -15,7 +15,7 @@ class CreateSitiosTable extends Migration
     {
         Schema::create('sitios', function (Blueprint $table) {
             $table->id();
-            $table->string('departamento');
+            $table->string('municipio');
           
             
             $table->timestamps();

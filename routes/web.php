@@ -39,6 +39,7 @@ Route::get('/chart',[PerfiljuradoController::class,'chart'])->name('chart');
 Route::get('/cierresesion',[UsersController::class,'cierre'])->name('cierresesion');
 
 
+
 Route::resource('jurado', PerfiljuradoController::class);
 //
 Route::resource('sitios', SitioController::class);

@@ -16,7 +16,8 @@ class PerfiljuradoController extends Controller
      */
     public function index()
     {
-        //
+        $perfil = Jurado::all();
+        return view('perfil.index', compact('perfil'));
     }
 
     /**
@@ -45,8 +46,8 @@ class PerfiljuradoController extends Controller
 
         $jurado->save();
 
-        // return redirect()->route('perfil.index');
-        return 'holaaa';
+        return redirect()->route('jurado.index');
+        
 
     }
 
@@ -67,9 +68,10 @@ class PerfiljuradoController extends Controller
      * @param  \App\Models\Perfiljurado  $perfiljurado
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit($id)
     {
-        //
+        $perfil = Jurado::find($id);
+        return view('perfil.edit', compact('perfil'));
     }
 
     /**
@@ -79,9 +81,17 @@ class PerfiljuradoController extends Controller
      * @param  \App\Models\Perfiljurado  $perfiljurado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        //
+        $jurado = Jurado::find($id);
+        $jurado->identificacion = $request->identificacion;
+        $jurado->nombre = $request->nombre;
+        $jurado->apellido = $request->apellido;
+        $jurado->email = $request->email;
+
+        $jurado->save();
+
+        return redirect()->route('jurado.index', compact('jurado'));
     }
 
     /**
@@ -90,9 +100,10 @@ class PerfiljuradoController extends Controller
      * @param  \App\Models\Perfiljurado  $perfiljurado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        //
+        Jurado::destroy($id);
+        return redirect()->route('jurado.index');
     }
 
     public function chart(){
